@@ -13,8 +13,6 @@ from os.path import exists
 import sys
 import threading
 
-setWindowTitle("a")
-
 def convertTimeToReadable(sec): 
 	# from https://www.journaldev.com/44690/python-convert-time-hours-minutes-seconds
 	hour = sec // 3600
