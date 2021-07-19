@@ -1,3 +1,0 @@
-# if the hotkey variable is left empty the program will prompt you for a hotkey when
-# opened next and will store it.
-hotkey=t

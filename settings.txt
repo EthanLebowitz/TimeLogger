@@ -1,0 +1,11 @@
+# Hotkey can be set to a single key such as <t> or <shift>, or it
+# can be set to a combination such as <ctrl+shift+t>.
+hotkey=ctrl+t
+
+# Program is prevented from logging two times within log_delay seconds
+# of eachother. This prevents log spam caused by holding down the hotkey.
+# Recommended value greater than 0.
+log_delay=1
+
+# Displays current time elapsed. Not tested accross platforms. Any value other
+display_timer=true
