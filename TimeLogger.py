@@ -127,11 +127,10 @@ class InputOutput:
 			os.mkdir("logs")
 		except:
 			pass
-		now = datetime.now()
-		dateString = now.strftime("%Y-%m-%d-%H-%M-%S")
+		dateString = self.startTime.strftime("%Y-%m-%d-%H-%M-%S")
 		fileName = "logs/"+dateString+".txt"
 		logFile = open(fileName, "a")
-		logFile.write("Timer began at " + now.strftime("%H:%M:%S") + " on " + now.strftime("%d/%m/%Y") + "\n")
+		logFile.write("Timer began at " + self.startTime.strftime("%H:%M:%S") + " on " + self.startTime.strftime("%Y/%m/%d") + "\n")
 		logFile.close()
 		return fileName
 		
@@ -139,12 +138,15 @@ class InputOutput:
 		# Outputs timer start message to command line and creates a new log file.
 		
 		sys.stdout.write("\r")
-		sys.stdout.write("Timer began at " + startNow.strftime("%H:%M:%S") + " on " + startNow.strftime("%d/%m/%Y") + "\n\n")
-		self.logFileName = self.createLogFile()
+		sys.stdout.write("Timer began at " + startNow.strftime("%H:%M:%S") + " on " + startNow.strftime("%Y/%m/%d") + "\n\n")
+		self.startTime = startNow
 		
 	def notifyHotkeyPressed(self, readableTime):
+		# If log file does not exist, create it.
+		if not hasattr(self, "logFileName"):
+			self.logFileName = self.createLogFile()
+
 		# Outputs time logged message to command line and logs time in log file.
-		
 		logFile = open(self.logFileName, "a")
 		logFile.write(readableTime+"\n")
 		logFile.close()

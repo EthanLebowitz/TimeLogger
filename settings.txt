@@ -7,5 +7,6 @@ hotkey=ctrl+t
 # Recommended value greater than 0.
 log_delay=1
 
-# Displays current time elapsed. Not tested accross platforms. Any value other
+# Displays current time elapsed. Not tested accross platforms.
+# Any value other than 'true' will be treated as 'false'.
 display_timer=true
